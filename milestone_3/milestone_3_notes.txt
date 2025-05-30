@@ -1,0 +1,35 @@
+START
+DISPLAY "Welcome message"
+
+SET total_minutes = 0
+
+FOR day = 1 TO 5
+ASK user: "How many minutes did you exercise on day {day}?"
+STORE answer in variable minutes
+ADD minutes to total_minutes
+
+IF minutes == 0 THEN
+DISPLAY "No exercise message"
+ELSE IF minutes < 30 THEN
+DISPLAY "Low effort message"
+ELSE IF minutes between 30 and 60 THEN
+DISPLAY "Good job message"
+ELSE
+DISPLAY "Amazing effort message"
+END IF
+END FOR
+
+CALCULATE average = total_minutes / 5
+
+DISPLAY total and average minutes
+
+IF average < 30 THEN
+DISPLAY "Try to do more exercise"
+ELSE IF average == 30 THEN
+DISPLAY "You're doing great"
+ELSE
+DISPLAY "Excellent habit"
+END IF
+
+END
+
